@@ -1,0 +1,31 @@
+static terminology:
+Aspect:it is concerns which we are going to implement across the application like:  logging,Security,tx
+
+Point Cut:Expression which determine what method should be intercept or inject(where we have to implemnt AOP ,point cut defines that).
+PointCuts tell on which join points the aspect will be applied. 
+An advice is associated with a point cut expression and is applied to a join point which matches the point cut expression.
+
+Advise: it is action taken by AOP at particular  joint point(piece of code).An Advice is the actual implementation of the aspect. 
+Aspect is a concept and Advice is the concrete implementation of the concept.
+
+Types:
+Before advice: Advice that executes before a join point, but which does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).
+
+After returning advice: Advice to be executed after a join point completes normally: for example, if a method returns without throwing an exception.
+
+After throwing advice: Advice to be executed if a method exits by throwing an exception.
+
+After advice: Advice to be executed regardless of the means by which a join point exits (normal or exceptional return).
+
+Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation.
+
+It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception.
+
+//dynamic
+
+joint Cut:A JoinPoint is a point in the execution of the program where an aspect can be applied. 
+It could be before/after executing the method, before throwing an exception, before/after modifying an instance variable etc. 
+Keep in mind that it is not necessary and also not required to apply an aspect at all the available join points. Spring AOP only supports method execution join points.
+
+Weaving:Weaving is the process of applying the aspect on the target object to product the proxy object. 
+Weaving can be done at compile time, class loading time or runtime. Spring AOP supports weaving at runtime.
